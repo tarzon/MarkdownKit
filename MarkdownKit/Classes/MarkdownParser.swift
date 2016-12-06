@@ -78,9 +78,9 @@ open class MarkdownParser {
     return parse(NSAttributedString(string: markdown))
   }
 
-  open func parse(_ markdown: NSAttributedString) -> NSAttributedString {
+  open func parse(_ markdown: NSAttributedString, defaultFont: UIFont) -> NSAttributedString {
     let attributedString = NSMutableAttributedString(attributedString: markdown)
-    attributedString.addAttribute(NSFontAttributeName, value: font,
+    attributedString.addAttribute(NSFontAttributeName, value: defaultFont,
                                   range: NSRange(location: 0, length: attributedString.length))
     var elements: [MarkdownElement] = escapingElements
     elements.append(contentsOf: defaultElements)
