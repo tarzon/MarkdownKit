@@ -74,8 +74,8 @@ open class MarkdownParser {
   }
 
   // MARK: Parsing
-  open func parse(_ markdown: String) -> NSAttributedString {
-    return parse(NSAttributedString(string: markdown))
+  open func parse(_ markdown: String, defaultFont: UIFont) -> NSAttributedString {
+    return parse(NSAttributedString(string: markdown), defaultFont: defaultFont)
   }
 
   open func parse(_ markdown: NSAttributedString, defaultFont: UIFont) -> NSAttributedString {
